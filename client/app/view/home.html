@@ -1,0 +1,37 @@
+<div ng-controller="HomeController">
+    <h1>{{exampleObject.text}}</h1>
+    <div class="row">
+        <input type="button" ng-click="getUsers()" value="Fetch Users!">
+    </div>
+    <div class="row">
+        <input type="text" name="Usuario" ng-model="user.user">
+        <input type="text" name="Password" ng-model="user.pass">
+        <input type="text" name="Posicion" ng-model="user.posicion">
+        <input type="button" ng-click="postUsers()" value="Post to /users!">
+    </div>
+
+    <table class="table table-striped">
+      <tr>
+        <th>
+          Usuario
+        </th>
+        <th>
+          Contraseña
+        </th>
+        <th>
+          Posición
+        </th>
+      </tr>
+      <tr ng-repeat="user in users">
+        <td>
+          {{user.user}}
+        </td>
+        <td>
+          {{user.pass}}
+        </td>
+        <td>
+          {{user.posicion}}
+        </td>
+      </tr>
+    </table>
+</div>
