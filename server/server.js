@@ -10,9 +10,9 @@ server.connection({
 
 server.register(inert, function(err){
 
-  server.route([{
+	server.route([{
     method: 'GET',
-    path: ' /{param*}',
+    path: '/{param*}',
     config: {
       handler:{
         directory: {
@@ -22,21 +22,22 @@ server.register(inert, function(err){
     }
   }, {
     method: 'GET',
-    path: '/usuarios',
+    path: '/productos',
     config: {
       handler: function(request, reply){
-        var usuarios = [{user:"admin",pass:"123",posicion:"admin"},
-        {user:"venderdor1",pass:"123",posicion:"vendedor"},
-        {user:"vendedor2",pass:"123",posicion:"vendedor"}];
-        reply(usuarios);
+        var productos = [{id:"1",descripcion:"manzana",fecha_Ingreso:"01/11/2015",fecha_Venc:"15/11/2015"},
+        {id:"2",descripcion:"pera",fecha_Ingreso:"01/11/2015",fecha_Venc:"15/11/2015"},
+        {id:"3",descripcion:"banana",fecha_Ingreso:"01/11/2015",fecha_Venc:"15/11/2015"},
+        {id:"4",descripcion:"sandia",fecha_Ingreso:"01/11/2015",fecha_Venc:"15/11/2015"},];
+        reply(productos);
       }
     }
   },{
     method: 'POST',
-    path: '/usuarios',
+    path: '/productos',
     config: {
       handler: function(request, reply){
-        console.log("POST a /students realizado, con la siguiente data: User: \n" + request.payload.user + "\nPassword: " + request.payload.pass+"\nPosicion: "+request.payload.posicion )
+        console.log("POST a /productos realizado, con la siguiente data: Descripcion: \n" + request.payload.descripcion + "\nfecha_Ingreso: " + request.payload.fecha_Ingreso+"\nfecha_Venc: "+request.payload.fecha_Venc )
         reply('ok');
       }
     }
@@ -44,7 +45,7 @@ server.register(inert, function(err){
 
 
 
-  server.start(function () {
-      console.log('Server running at:', server.info.uri);
-  });
+	server.start(function () {
+	    console.log('Server running at:', server.info.uri);
+	});
 });

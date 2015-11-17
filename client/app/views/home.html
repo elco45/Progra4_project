@@ -1,0 +1,30 @@
+<div ng-controller="HomeController">
+    <h1>{{exampleObject.text}}</h1>
+    <div class="row">
+        <input type="button" ng-click="getProductos()" value="Fetch Productos!">
+    </div>
+    <div class="row">
+        <input type="text" name="Name" ng-model="producto.id">
+        <input type="text" name="Account" ng-model="producto.descripcion">
+        <input type="button" ng-click="postProductos()" value="Post to /productos!">
+    </div>
+
+    <table class="table table-striped">
+      <tr>
+        <th>
+          Cuenta
+        </th>
+        <th>
+          Nombre
+        </th>
+      </tr>
+      <tr ng-repeat="producto in productos">
+        <td>
+          {{producto.id}}
+        </td>
+        <td>
+          {{producto.descripcion}}
+        </td>
+      </tr>
+    </table>
+</div>

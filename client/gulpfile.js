@@ -1,11 +1,11 @@
-var gulp = require('gulp');/*libreria, para importar dependecias sin necesidad de q nosotros lo hagamos*/
+var gulp = require('gulp');
 var $ = require('gulp-load-plugins')({
 		lazy: true
 	});
 	var debug = require('gulp-debug');
-var mainBowerFiles = require('main-bower-files');/*todos los paquetes de bower importantes*/
+var mainBowerFiles = require('main-bower-files');
 
-gulp.task('index', function() {/*llamar gulp index para importar todo*/
+gulp.task('index', function() {
 	return gulp.src('./app/index.html')
 		.pipe($.inject(gulp.src(mainBowerFiles(), {
 			read: false

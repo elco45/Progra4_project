@@ -1,23 +1,23 @@
 angular.module('AngularScaffold.Controllers')
   .controller('HomeController', ['$scope', 'HomeService', function ($scope, HomeService) {
-    	$scope.title = "Tabla de usuarios."
+    	$scope.title = "Tabla de estudiantes de programamción 4."
       $scope.exampleObject = {text: "Hola, Mundo"}
-      $scope.usuarios = [];
-      $scope.usuario = {};
+      $scope.productos = [];
+      $scope.producto = {};
 
-      $scope.getUsers = function(){
-        HomeService.GetUsers().then(function(response){
-          $scope.usuarios = response.data;
+      $scope.getProductos = function(){
+        HomeService.GetProductos().then(function(response){
+          $scope.productos = response.data;
         }).catch(function(err){
-          alert('Error fetching students')
+          alert('Error fetching productos')
         });
       }
 
-      $scope.postUsers = function(){
-        HomeService.PostUsers($scope.usuario).then(function(response){
-          alert("Posted to /usuarios");
+      $scope.postProductos = function(){
+        HomeService.PostProductos($scope.producto).then(function(response){
+          alert("Posted to /productos");
         }).catch(function(err){
-          alert("Error posting to usuarios");
+          alert("Error posting to productos");
         });
       }
       $scope.changeExampleObject = function(){
