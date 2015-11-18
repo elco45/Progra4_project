@@ -1,9 +1,9 @@
 angular.module('AngularScaffold.Controllers')
   .controller('HomeController', ['$scope', 'HomeService', function ($scope, HomeService) {
-    	$scope.title = "Tabla de estudiantes de programamción 4."
-      $scope.exampleObject = {text: "Hola, Mundo"}
+    	$scope.title = "Facturación"
       $scope.productos = [];
       $scope.producto = {};
+      $scope.factura=[];
 
       $scope.getProductos = function(){
         HomeService.GetProductos().then(function(response){
@@ -19,8 +19,18 @@ angular.module('AngularScaffold.Controllers')
         }).catch(function(err){
           alert("Error posting to productos");
         });
-      }
-      $scope.changeExampleObject = function(){
-        $scope.exampleObject = {text: "Adios, mundo."};
-      }
-  }]);
+      }  
+
+      $scope.findProductos = function(){
+        HomeService.FindProductos($scope.producto).then(function(response){
+          $scope.productos = response.data;
+          for (var i = 0; i < $scope.productos.length; i++) {
+            if ($scope.producto.id==$scope.productos[i].id) {
+              alert("entrooooooo!");
+            };
+          };
+        }).catch(function(err){
+          alert("Error posting to productos");
+        });
+      }  
+}]);
