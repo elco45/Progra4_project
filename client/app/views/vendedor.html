@@ -1,0 +1,67 @@
+<div ng-controller="HomeController" class="container color_panel">
+  <div class="row">
+    <div>
+      <div class="col-md-12 col-xs-12 " id='pestaña1'>
+        <center><h1 class="titulo">CONTROL DE FACTURA</h1></center> 
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-md-offset-1 col-xs-4 ">
+        <p class="texto">Nombre Vendedor</p> 
+      </div>
+      <div class="col-md-3 col-md-offset-1 col-xs-4 ">
+        <p class="texto"> Codigo de vendedor</p>
+      </div>
+      <div class="col-md-3 col-md-offset-1 col-xs-4 " >
+        <p class="texto">Nombre de Cliente</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-md-offset-1 col-xs-4 ">
+       <input type="text" name="NombreVendedor" ng-model="vendedor.name">
+      </div>
+      <div class="col-md-3 col-md-offset-1 col-xs-4 ">
+        <input type="text" name="CodigoVendedor" ng-model="vendedor.id">
+      </div>
+      <div class="col-md-3 col-md-offset-1 col-xs-4 " >
+        <input type="text" name="NombreCliente" ng-model="cliente.name">
+      </div>
+    </div>  
+    <div class="row">
+      <hr>
+      <div class="col-md-4 col-md-offset-3 col-xs-6 ">
+        <p class="texto">INGRESE CODIGO DE BARRA</p>
+      </div>
+      <div class="col-md-5 col-xs-6 ">
+        <input type="text" name="CodigoBarra" ng-model="search.account">
+        <input type="button" ng-click="addFact()" value="Add Factura">
+      </div>
+    </div>  
+  </div>        
+  <br>
+  <br>
+  <div class="table-responsive normal"> 
+    <table class="table table-bordered table-hover table-hover tamaño_tabla">
+      <caption class="colorcabeza">Carrito de Compra</caption>
+      <thead>
+        <tr>
+          <td>Account</td>
+          <td>Name</td>
+        </tr>
+      </thead>
+      <tbody>
+       <tr ng-repeat="factura in factura">
+        <td>
+          {{factura.account}}
+        </td>
+        <td>
+          {{factura.name}}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>  
+</div>
+        
+        

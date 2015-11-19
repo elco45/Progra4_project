@@ -3,6 +3,9 @@ angular.module('AngularScaffold.Controllers')
     	$scope.title = "Facturación"
       $scope.productos = [];
       $scope.producto = {};
+      $scope.vendedor={};
+      $scope.cliente={};
+      $scope.search={};
       $scope.factura=[];
 
       $scope.getProductos = function(){
@@ -19,18 +22,29 @@ angular.module('AngularScaffold.Controllers')
         }).catch(function(err){
           alert("Error posting to productos");
         });
-      }  
+      }
 
       $scope.findProductos = function(){
-        HomeService.FindProductos($scope.producto).then(function(response){
+         HomeService.FindProductoByAccount($scope.search).then(function(response){
           $scope.productos = response.data;
-          for (var i = 0; i < $scope.productos.length; i++) {
-            if ($scope.producto.id==$scope.productos[i].id) {
-              alert("entrooooooo!");
-            };
-          };
         }).catch(function(err){
-          alert("Error posting to productos");
+          alert('Error fetching productos')
         });
-      }  
-}]);
+      }
+
+      $scope.addFact=function(){
+        console.log($scope.search)
+          HomeService.AddFact($scope.search).then(function(response){
+          if (!response.data[0].length) {
+            $scope.factura.push(response.data[0]);
+          }
+          
+          /*if($scope.factura.length == 3){
+            $scope.factura = [];
+          }*/
+          
+        }).catch(function(err){
+          alert('Error fetching productos')
+        });
+      }
+  }]);

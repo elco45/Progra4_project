@@ -1,49 +1,26 @@
 var hapi = require('hapi');
 var inert = require('inert');
+var mongoose = require('mongoose');
+var routes = require('./routes');
 
 var server = new hapi.Server();
 server.connection({
-    host: 'localhost',
-    port: 8000,
+    host: '0.0.0.0',
+    port: +process.env.PORT | 8000,
 });
 
+mongoose.connect(process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL || 'mongodb://localhost/angularscaffold');/*ORM- Object relational mapper, no ocupa modelar bd en la bd*/
+													/*^^^^^^ angularscaffold es la bd*/
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error'));
+db.once('open', function callback() {
+    console.log("Connection with database succeeded.");
+});
 
 server.register(inert, function(err){
 
-	server.route([{
-    method: 'GET',
-    path: '/{param*}',
-    config: {
-      handler:{
-        directory: {
-          path: ['../client/app', '../client/bower_components']
-        }
-      }
-    }
-  }, {
-    method: 'GET',
-    path: '/productos',
-    config: {
-      handler: function(request, reply){
-        var productos = [{id:"1",descripcion:"manzana",fecha_Ingreso:"01/11/2015",fecha_Venc:"15/11/2015"},
-        {id:"2",descripcion:"pera",fecha_Ingreso:"01/11/2015",fecha_Venc:"15/11/2015"},
-        {id:"3",descripcion:"banana",fecha_Ingreso:"01/11/2015",fecha_Venc:"15/11/2015"},
-        {id:"4",descripcion:"sandia",fecha_Ingreso:"01/11/2015",fecha_Venc:"15/11/2015"},];
-        reply(productos);
-      }
-    }
-  },{
-    method: 'POST',
-    path: '/productos',
-    config: {
-      handler: function(request, reply){
-        console.log("POST a /productos realizado, con la siguiente data: Descripcion: \n" + request.payload.descripcion + "\nfecha_Ingreso: " + request.payload.fecha_Ingreso+"\nfecha_Venc: "+request.payload.fecha_Venc )
-        reply('ok');
-      }
-    }
-  }]);
-
-
+	server.route(routes.endpoints);
 
 	server.start(function () {
 	    console.log('Server running at:', server.info.uri);

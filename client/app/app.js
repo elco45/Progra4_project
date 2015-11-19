@@ -4,11 +4,12 @@ angular.module('AngularScaffold.Controllers', []);
 angular.module('AngularScaffold.Services', []);
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-	$urlRouterProvider.otherwise('home');
+	$urlRouterProvider.otherwise('vendedor');
 	$stateProvider
-        .state('home', {
-            url: '/home',
-            templateUrl: '/views/home.html',
+        .state('vendedor', {
+            url: '/vendedor',
+            templateUrl: '/views/vendedor.html',
             controller: 'HomeController'
         });
+        
 }])

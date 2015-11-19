@@ -1,0 +1,49 @@
+@import url(http://fonts.googleapis.com/css?family=Frijole&effect=3d);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+.scrol{
+    height: 300px;
+    width: 500px;
+    margin: 0px 0px 0px 100px;
+    border: 1px solid #ddd;
+    border-color: black;
+    background: #f1f1f1;
+    overflow-y: scroll;
+    opacity: 0.70;
+}
+.normal {
+  border: 1px solid #000;
+}
+.normal th, .normal td {
+  border: 1px solid #000;
+  background-color: white;
+}
+.colorcabeza{
+    background-color: #1F1D1D;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+
+}
+.titulo{
+  font: oblique bold 150% cursive; 
+}
+.texto{
+  font: oblique bold 110% cursive; 
+}
+.cajas{
+    height: 30px;
+    width: 200px;
+    background: white;
+    
+}
+.color_panel{
+    background-color: #DED9D9;
+}
+.tamaño_lector{
+  width: 300px;
+  background: #CCC
+}
+.tamaño_tabla{
+   
+   background-color: white;
+}
