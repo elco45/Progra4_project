@@ -1,14 +1,14 @@
 {
   "name": "angular-scaffold",
   "version": "1.0.0",
-  "description": "Angular scaffold with hapi.js serving it",
+  "description": "Progra4 project with hapi.js serving it",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/ZSnake/angular-scaffold.git"
+    "url": "git+ssh://git@github.com/elco45/Progra4_project.git"
   },
   "keywords": [
     "angular",
@@ -20,9 +20,9 @@
   "author": "Viktor Zavala",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ZSnake/angular-scaffold/issues"
+    "url": "https://github.com/elco45/Progra4_project/issues"
   },
-  "homepage": "https://github.com/ZSnake/angular-scaffold#readme",
+  "homepage": "https://github.com/elco45/Progra4_project#readme",
   "dependencies": {
     "hapi": "^11.1.0",
     "hapi-mongodb": "^4.1.0",

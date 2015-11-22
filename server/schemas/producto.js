@@ -1,8 +1,12 @@
 var mongoose = require('mongoose');
 
 var ProductoSchema = new mongoose.Schema({
-  name : String,
-  account : String,
+	id : String,
+  	descripcion : String,
+ 	fecha_ingreso: String,
+ 	fecha_venc: String,
+ 	precio: Number,
+ 	cantidad: Number,
 });
 
-module.exports = mongoose.model('Producto', ProductoSchema);
+module.exports = mongoose.model('lista_productos', ProductoSchema);

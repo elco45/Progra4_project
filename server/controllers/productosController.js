@@ -10,8 +10,12 @@ exports.getProductos = {
 exports.createProducto = {
   handler: function(request, reply){
     var newProducto = new producto({
-      name: request.payload.name,
-      account: request.payload.account
+      id: request.payload.id,
+      descripcion: request.payload.descripcion,
+      fecha_ingreso: request.payload.fecha_ingreso,
+      fecha_venc:request.payload.fecha_venc,
+      precio:request.payload.precio,
+      cantidad: request.payload.cantidad
     });
     newProducto.save();
     console.log('producto saved');
@@ -20,14 +24,8 @@ exports.createProducto = {
 }
 exports.getProductoByAccount = {
   handler: function(request, reply){
-    var productos = producto.find({account:request.payload.account});
+    var productos = producto.find({id:request.payload.id});
     reply(productos);
   }
 } 
 
-exports.addFactu={
-  handler: function(request, reply){
-    var productos = producto.find({account:request.payload.account});
-    reply(productos);
-  }
-}

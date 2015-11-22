@@ -1,10 +1,13 @@
-<div ng-controller="HomeController" class="container color_panel">
+<div ng-controller="VendedorController" class="container color_panel">
+  <div class="row">
+    <input type="button" ng-click="goAdmin()" value="Admin">
+  </div>
   <div class="row">
     <div>
       <div class="col-md-12 col-xs-12 " id='pestaña1'>
         <center><h1 class="titulo">CONTROL DE FACTURA</h1></center> 
         <br>
-      </div>
+        </div>
     </div>
     <div class="row">
       <div class="col-md-3 col-md-offset-1 col-xs-4 ">
@@ -34,8 +37,8 @@
         <p class="texto">INGRESE CODIGO DE BARRA</p>
       </div>
       <div class="col-md-5 col-xs-6 ">
-        <input type="text" name="CodigoBarra" ng-model="search.account">
-        <input type="button" ng-click="addFact()" value="Add Factura">
+        <input type="text" name="CodigoBarra" ng-model="search.id">
+        <input type="button" ng-click="addFactura()" value="Add Factura">
       </div>
     </div>  
   </div>        
@@ -46,17 +49,29 @@
       <caption class="colorcabeza">Carrito de Compra</caption>
       <thead>
         <tr>
-          <td>Account</td>
-          <td>Name</td>
+          <td>ID</td>
+          <td>Descripción</td>
+          <td>Precio</td>
+          <td>Cantidad</td>
+          <td>Total</td>
         </tr>
       </thead>
       <tbody>
-       <tr ng-repeat="factura in factura">
+       <tr ng-repeat="linea_factura in factura track by $index">
         <td>
-          {{factura.account}}
+          {{linea_factura.id}}
         </td>
         <td>
-          {{factura.name}}
+          {{linea_factura.descripcion}}
+        </td>
+        <td>
+          {{linea_factura.precio}}
+        </td>
+        <td>
+          <input id="{{$index}}" type="number" min="1" max="{{linea_factura.cantidad}}" ng-model="lf_cantidad" ng-click="changeCant(linea_factura, $index) "/>
+        </td>
+        <td>
+          {{linea_factura.total}}
         </td>
       </tr>
       </tbody>

@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "1.0.0",
-  "description": "angular scaffold client part",
+  "description": "factura client part",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^3.9.0",
@@ -23,6 +23,6 @@
     "<div",
     "ui-view></div>"
   ],
-  "author": "viktor zavala",
+  "author": "Dennis Cheong",
   "license": "ISC"
 }

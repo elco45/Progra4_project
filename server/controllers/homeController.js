@@ -1,7 +1,7 @@
 exports.home = {
 	handler:{
-				directory: {
-					path: ['../client/app', '../client/bower_components']
-				}
-			}
+		directory: {
+			path: ['../client/app', '../client/bower_components']
+		}
+	}
 }

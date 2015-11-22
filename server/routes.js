@@ -1,8 +1,8 @@
 var homeController = require('./controllers/homeController');
-var productosController = require('./controllers/productosController');
+var vendedorController =require('./controllers/vendedorController');
+var adminController =require('./controllers/adminController');
 
 exports.endpoints = [{method: 'GET', path: '/{param*}', config: homeController.home},
-					{method: 'GET', path: '/v1/productos', config: productosController.getProductos},
-           			{method: 'POST', path: '/v1/producto', config: productosController.createProducto},
-           			{method: 'POST', path: '/v1/producto/account',config:productosController.getProductoByAccount},
-           			{method: 'POST',path: '/v1/factura',config:productosController.addFactu}];
+					{method: 'GET', path: '/v1/productos', config: adminController.getProductos},
+					{method: 'POST', path: '/v1/productos', config: adminController.postProductos},
+					{method: 'POST', path: '/v1/linea_fact', config: vendedorController.GetProductoById}];

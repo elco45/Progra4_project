@@ -1,9 +1,9 @@
 {
   "name": "angular-sacffold",
   "authors": [
-    "Viktor Zavala <viktor@acklenavenue.com>"
+    "Dennis Cheong"
   ],
-  "description": "AngularJS scaffold app with Hapi server serving it",
+  "description": "Progra 4 app with Hapi server serving it",
   "main": "index.html",
   "moduleType": [],
   "keywords": [
