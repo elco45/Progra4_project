@@ -1,22 +1,20 @@
 @import url(http://fonts.googleapis.com/css?family=Frijole&effect=3d);
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 .scrol{
-    height: 300px;
-    width: 500px;
+    height: 100%;
+    width: 100%;
     margin: 0px 0px 0px 100px;
     border: 1px solid #ddd;
     border-color: black;
-    background: #f1f1f1;
+    background: white;
     overflow-y: scroll;
-    opacity: 0.70;
 }
 .normal {
   border: 1px solid #000;
+  background: white;
+  height: 500px;
 }
-.normal th, .normal td {
-  border: 1px solid #000;
-  background-color: white;
-}
+
 .colorcabeza{
     background-color: #1F1D1D;
     text-align: center;
@@ -42,8 +40,4 @@
 .tamaño_lector{
   width: 300px;
   background: #CCC
-}
-.tamaño_tabla{
-   
-   background-color: white;
 }

@@ -10,7 +10,7 @@ server.connection({
 });
 
 mongoose.connect(process.env.MONGOLAB_URI ||
-    process.env.MONGOHQ_URL || 'mongodb://localhost/lista_productos');/*ORM- Object relational mapper, no ocupa modelar bd en la bd*/
+    process.env.MONGOHQ_URL || 'mongodb://localhost/lista_productos' );/*ORM- Object relational mapper, no ocupa modelar bd en la bd*/
 													/*^^^^^^ angularscaffold es la bd*/
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));

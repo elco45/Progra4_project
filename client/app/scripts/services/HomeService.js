@@ -1,8 +1,8 @@
-angular.module('AngularScaffold.Services').factory('AdminService', ['$http',
+angular.module('AngularScaffold.Services').factory('HomeService', ['$http',
 	function($http){
 		return {
-			GoVend: function(){
-				return $http.get("v1/vend");
+			AddFactura: function(payload){
+				return $http.post("v1/linea_fact",payload);
 			},
 			GetProductos:function(){
 				return $http.get("v1/productos");

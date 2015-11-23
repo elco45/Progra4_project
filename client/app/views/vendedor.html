@@ -44,8 +44,8 @@
   </div>        
   <br>
   <br>
-  <div class="table-responsive normal"> 
-    <table class="table table-bordered table-hover table-hover tamaño_tabla">
+  <div class="row table-responsive normal "> 
+    <table class="table table-bordered table-hover table-hover">
       <caption class="colorcabeza">Carrito de Compra</caption>
       <thead>
         <tr>
@@ -54,10 +54,11 @@
           <td>Precio</td>
           <td>Cantidad</td>
           <td>Total</td>
+          <td></td>
         </tr>
       </thead>
-      <tbody>
-       <tr ng-repeat="linea_factura in factura track by $index">
+      <tbody >
+       <tr ng-repeat="linea_factura in factura track by $index" id="{{fact}}" >
         <td>
           {{linea_factura.id}}
         </td>
@@ -68,14 +69,22 @@
           {{linea_factura.precio}}
         </td>
         <td>
-          <input id="{{$index}}" type="number" min="1" max="{{linea_factura.cantidad}}" ng-model="lf_cantidad" ng-click="changeCant(linea_factura, $index) "/>
+          <input id="{{$index}}" type="number" min="1" value="{{linea_factura.cantidad}}" max="{{linea_factura.cantidadmax}}" ng-model="lf_cantidad" ng-click="changeCant(linea_factura, $index) "/>
         </td>
         <td>
-          {{linea_factura.total}}
+          <input id="{{$index}}+a" value="{{linea_factura.total}}" disabled="disabled"/>
+        </td>
+        <td>
+          <input type="button" ng-click="removeFact(linea_factura)" value="X">
         </td>
       </tr>
       </tbody>
     </table>
+  </div>
+  <div class="row">
+    <div class="col-md-7 col-md-offset-5">
+      <input type="button" ng-click="efectuarPago()" value="Efectuar Pago">
+    </div>
   </div>  
 </div>
         
