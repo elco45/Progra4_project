@@ -8,11 +8,20 @@ exports.GetProductoById = {
   }
 } 
 
-/*exports.PutProductos ={
+exports.PutProductos ={
   handler: function(request, reply){
-    
+    producto.findOneAndUpdate({id:request.payload.id},{cantidad:request.payload.cantidadmax-request.payload.cantidad},function(err,productos){
+      productos.save(function(err){
+        if (err) {
+          alert("YES");
+        }
+      });
+    });
+
   }
-}*/
+}
+
+
 
 
 

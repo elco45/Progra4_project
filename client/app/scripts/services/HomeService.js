@@ -9,9 +9,9 @@ angular.module('AngularScaffold.Services').factory('HomeService', ['$http',
 			},
 			PostProductos: function(payload){
 				return $http.post("v1/productos",payload);
-			}/*,
+			},
 			Facturar: function(payload){
 				return $http.put("v1/fact",payload);
-			}*/
+			}
 	    };
 }]);

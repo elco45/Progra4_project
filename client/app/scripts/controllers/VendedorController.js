@@ -70,11 +70,18 @@ angular.module('AngularScaffold.Controllers')
         });
       }
 
-      /*$scope.efectuarPago =function(){
-        HomeService.Facturar().then(function(response){
-          
+      $scope.efectuarPago =function(){
+        for (var i = 0; i < $scope.factura.length; i++) {
+          HomeService.Facturar($scope.factura[i]).then(function(response){
+          });  
         }
-      }*/
+        $scope.factura=[];
+        $('#sub').val("");
+        $('#isv').val("");
+        $('#tot').val("");
+        $('#search').val("");
+        window.print();
+      }
 
       $scope.changeCant = function(object, $index){
         object.total = $('#'+$index).val()*object.precio;
