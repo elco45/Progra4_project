@@ -8,7 +8,11 @@ exports.GetProductoById = {
   }
 } 
 
-
+/*exports.PutProductos ={
+  handler: function(request, reply){
+    
+  }
+}*/
 
 
 

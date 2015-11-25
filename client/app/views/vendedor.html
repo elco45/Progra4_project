@@ -37,8 +37,7 @@
         <p class="texto">INGRESE CODIGO DE BARRA</p>
       </div>
       <div class="col-md-5 col-xs-6 ">
-        <input type="text" name="CodigoBarra" ng-model="search.id">
-        <input type="button" ng-click="addFactura()" value="Add Factura">
+        <input id="search" type="text" name="CodigoBarra" autofocus="autofocus" ng-model="search.id" ng-keydown="addFactura($event)">
       </div>
     </div>  
   </div>        
@@ -53,7 +52,7 @@
           <td>Descripción</td>
           <td>Precio</td>
           <td>Cantidad</td>
-          <td>Total</td>
+          <td>Total por producto</td>
           <td></td>
         </tr>
       </thead>
@@ -82,8 +81,21 @@
     </table>
   </div>
   <div class="row">
-    <div class="col-md-7 col-md-offset-5">
+    <label class="col-md-offset-8 col-md-1">Subtotal</label>
+    <input id="sub" type="number" disabled="disabled" class="col-md-3" value="0"/>
+  </div>
+  <div class="row">
+    <label class="col-md-offset-8 col-md-1">ISV</label>
+    <input id="isv" type="number" disabled="disabled" class="col-md-3" value="0"/>
+  </div>
+  <div class="row">
+    <label class="col-md-offset-8 col-md-1">Total</label>
+    <input id="tot" type="number" disabled="disabled" class="col-md-3" value="0"/>
+  </div>
+  <div class="row">
+    <div class="col-md-7 col-md-offset-4">
       <input type="button" ng-click="efectuarPago()" value="Efectuar Pago">
+      <input class="col-md-offset-1" type="button" ng-click="cancel()" value="Cancelar">
     </div>
   </div>  
 </div>
