@@ -48,7 +48,7 @@ angular.module('AngularScaffold.Controllers')
                 if ($scope.temp<$scope.factura[$scope.existe]['cantidadmax']) {
                   $scope.factura[$scope.existe]['cantidad']++;
                   $('#'+$scope.existe).val($scope.temp+1);
-                  $scope.factura[$scope.existe]['total']=$scope.temp*$scope.factura[$scope.existe]['precio'];
+                  $scope.factura[$scope.existe]['total']=$('#'+$scope.existe).val()*$scope.factura[$scope.existe]['precio'];
                   $('#'+$scope.existe+'a').val($scope.factura[$scope.existe]['total'])
                   $scope.tot=0;
                   for(var i = 0; i < $scope.factura.length; i++) {

@@ -4,6 +4,7 @@ angular.module('AngularScaffold.Controllers')
       $scope.productos = [];
       $scope.producto = {};
       $scope.search={};
+      $scope.template = '';
 
       $scope.getProductos = function(){
         HomeService.GetProductos().then(function(response){
@@ -12,10 +13,10 @@ angular.module('AngularScaffold.Controllers')
           alert('Error fetching productos')
         });
       }
-
+      $scope.getProductos();
       $scope.addProductos = function(){
         HomeService.PostProductos($scope.producto).then(function(response){
-          alert("Posted to /productos");
+          $scope.getProductos();
         }).catch(function(err){
           alert("Error posting to productos");
         });
@@ -28,6 +29,20 @@ angular.module('AngularScaffold.Controllers')
           alert('Error fetching productos')
         });
       }*/
+
+      $scope.cambiar_div = function(nombre){
+        if (nombre==="vendedor") {
+          $scope.template = '/views/vendedor_admin.html';
+        }else if (nombre==="productos_admin"){
+          $scope.template = '/views/productos_admin.html';
+        }else if (nombre==="productos_riesgo") {
+          $scope.template = '/views/productos_riesgo_admin.html';
+        }else if (nombre==="graficas_ingreso") {
+          $scope.template = '/views/graficas_ingreso.html';
+        }else if (nombre==="graficas_producto") {
+          $scope.template = '/views/grafica_producto.html';
+        };
+      }
 
       $scope.goVend=function(){
         $state.go('vendedor');
