@@ -11,7 +11,7 @@ body{
 ul, ol{
 	list-style: none;
 }
-.nav li a{
+.nav_menu_colgante li a{
 	background: black;
 	color: white;
 	text-decoration: none;
@@ -19,27 +19,31 @@ ul, ol{
 	display: block;
 
 }
-.nav >li{
+.nav_menu_colgante >li{
 	float: left;
 }
-.nav li a:hover{
+.nav_menu_colgante li a:hover{
 	background-color: #434343;
 }
 
-.nav li ul{
+.nav_menu_colgante li ul{
 	display:none;
 	position: absolute;
 	min-width: 100px; 
 	
 }
-.nav li:hover > ul{
+.nav_menu_colgante li:hover > ul{
 	display: block;
 }
-.nav li ul li{
+.nav_menu_colgante li ul li{
 	position: relative;
 
 }
-.nav li ul li ul{
+.nav_menu_colgante li ul li ul{
 	right: -100px;
 	top: 0px;
+}
+.nav li a{
+	background: #D7D3D3;
+	color: black;
 }

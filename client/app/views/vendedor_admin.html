@@ -1,17 +1,28 @@
- 	<table id="tabla_usuario">
+ 	<table id="tabla_usuario" ng-controller="Admin_Usuarios_Controller">
  			<tr>
  				<td><strong>Nombre</strong></td>
  				<td><strong>Apellido</strong></td>
  				<td><strong>User</strong></td>
  				<td><strong>Contraseña</strong></td>
- 				<td><strong>Opsion</strong></td>
+ 				<td><strong>Tipo</strong></td>
+ 				<td><strong>Opcion</strong></td>
  			</tr>
  			<tr>
- 				<td><input type="text" placeholder="Nombre.." class="cajas"></td>
- 				<td><input type="text" placeholder="Apellido.." class="cajas"></td>
- 				<td><input type="text" placeholder="User..." class="cajas"></td>
- 				<td><input type="password" placeholder="Contraseña" class="cajas"></td>
- 				<td><input class="btn btn-primary tamano_botones" type="button" value="Buscar"> <input class="btn btn-danger tamano_botones" type="button" value="Agregar"> <input class="btn btn-warning tamano_botones" type="button" value="Actualizar"></td>
+ 				<td><input type="text" placeholder="Nombre.." class="cajas" ng-model="usuarioG.nombre"></td>
+ 				<td><input type="text" placeholder="Apellido.." class="cajas" ng-model="usuarioG.id"></td>
+ 				<td><input type="text" placeholder="User..." class="cajas" ng-model="usuarioG.usuario"></td>
+ 				<td><input type="password" placeholder="Contraseña" class="cajas" ng-model="usuarioG.pass"></td>
+ 				<td>
+				  <select class="cajas"  >
+				 	  <option value="" ng-model="usuarioG.tipo">Vendedor</option>
+				 	  <option value="" ng-model="usuarioG.tipo">Administrador</option>
+				  </select>
+ 				</td>
+ 				<td>
+ 					<input class="btn btn-primary tamano_botones" type="button" value="Buscar">
+ 					<input class="btn btn-danger tamano_botones" type="button" ng-click="AddUsuario()" value="Agregar"> 
+ 					<input class="btn btn-warning tamano_botones" type="button" value="Actualizar">
+ 				</td>
  			</tr>
  		</table>
  		<hr>
@@ -23,6 +34,7 @@
  				<td><strong>Apellido</strong></td>
  				<td><strong>User</strong></td>
  				<td><strong>Contraseña</strong></td>
+ 				<td><strong>Tipo</strong></td>
  				<td><strong>Opcion</strong></td>
  			</tr>
  	    </table>
