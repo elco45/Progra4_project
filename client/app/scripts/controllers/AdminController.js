@@ -5,6 +5,7 @@ angular.module('AngularScaffold.Controllers')
       $scope.producto = {};
       $scope.search={};
       $scope.template = '';
+      $scope.user = {};
 
       $scope.getProductos = function(){
         HomeService.GetProductos().then(function(response){
@@ -46,5 +47,19 @@ angular.module('AngularScaffold.Controllers')
 
       $scope.goVend=function(){
         $state.go('vendedor');
+      }
+
+      $scope.register = function(){
+        var user = {username: $scope.user.username, 
+                    password:  $scope.user.password, 
+                    ID: $scope.user.ID,
+                    nombre: $scope.user.nombre,
+                    tipo: $scope.user.tipo};
+        HomeService.Register(user).then(function(response){
+          alert('Registered in correctly!');
+        }).catch(function(err){
+          console.log(err);
+          alert(err.data.error + " " + err.data.message);
+        })
       }
   }]);

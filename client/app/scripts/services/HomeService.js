@@ -12,6 +12,9 @@ angular.module('AngularScaffold.Services').factory('HomeService', ['$http',
 			},
 			PostProductos: function(payload){
 				return $http.post("v1/productos",payload);
-			}
+			},
+			Register: function(payload){
+	          return $http.post("v1/register", payload);
+	        }
 	    };
 }]);
