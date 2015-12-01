@@ -3,7 +3,6 @@ var producto = require('../schemas/producto');/*objetos q se van a volver tablas
 exports.getProductos = {
   handler: function(request, reply){
     var productos = producto.find({});
-    console.log(productos);
     reply(productos);
   }
 }
