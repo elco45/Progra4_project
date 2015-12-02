@@ -9,12 +9,10 @@ exports.getProductos = {
 
 exports.postProductos = {
   handler: function(request, reply){
-    
     var r= "";
     for (var i = 0; i < 10; i++) {
        r += request.payload.fecha_venc[i];
     };
-    console.log("es: "+r);
     request.payload.fecha_venc = r;
     var newProducto = new producto({
     	id: request.payload.id,
