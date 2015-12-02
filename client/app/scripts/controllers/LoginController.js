@@ -5,4 +5,5 @@ angular.module('AngularScaffold.Controllers')
     	$scope.goVendedor=function(){
     		$state.go('vendedor');
     	}
+    	
 }]);
