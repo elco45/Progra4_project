@@ -27,4 +27,8 @@ angular.module('AngularScaffold.Controllers')
           alert(err.data.error + " " + err.data.message);
         });
       }
+
+      $scope.goAdmin =function(){
+        $state.go("admin")
+      }
   }]);
