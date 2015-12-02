@@ -9,6 +9,11 @@ exports.getProductos = {
 
 exports.postProductos = {
   handler: function(request, reply){
+    var r= "";
+    for (var i = 0; i < 10; i++) {
+       r += request.payload.fecha_venc[i];
+    };
+    request.payload.fecha_venc = r;
     var newProducto = new producto({
     	id: request.payload.id,
       	descripcion: request.payload.descripcion,
@@ -16,7 +21,9 @@ exports.postProductos = {
       	fecha_venc: request.payload.fecha_venc,
       	precio: request.payload.precio,
       	cantidad: request.payload.cantidad
+
     });
+
     newProducto.save();
     console.log('producto saved');
     return reply('ok');
