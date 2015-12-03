@@ -1,13 +1,36 @@
 var producto = require('../schemas/producto');/*objetos q se van a volver tablas, ayuda a crud el bd*/
+var user = require('../schemas/user')
 
 exports.getProductos = {
+  auth: {
+    mode:'required',
+    strategy:'session',
+    scope: ['admin']
+  },
   handler: function(request, reply){
     var productos = producto.find({});
     reply(productos);
   }
 }
 
+exports.getUsers = {
+  auth: {
+    mode:'required',
+    strategy:'session',
+    scope: ['admin']
+  },
+  handler: function(request, reply){
+    var users=user.find({});
+    reply(users);
+  }
+}
+
 exports.postProductos = {
+  auth: {
+    mode:'required',
+    strategy:'session',
+    scope: ['admin']
+  },
   handler: function(request, reply){
     var r= "";
     for (var i = 0; i < 10; i++) {

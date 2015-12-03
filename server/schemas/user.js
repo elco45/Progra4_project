@@ -6,7 +6,7 @@ var UserSchema = new mongoose.Schema({
   password : String,
   nombre: String,
   ID: String,
-  tipo: String
+  scope: [String]
 });
 
 UserSchema.plugin(uniqueValidator);

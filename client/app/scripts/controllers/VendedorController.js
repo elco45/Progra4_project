@@ -75,12 +75,12 @@ angular.module('AngularScaffold.Controllers')
           HomeService.Facturar($scope.factura[i]).then(function(response){
           });  
         }
+        window.print();
         $scope.factura=[];
         $('#sub').val("");
         $('#isv').val("");
         $('#tot').val("");
         $('#search').val("");
-        window.print();
       }
 
       $scope.changeCant = function(object, $index){

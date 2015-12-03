@@ -18,9 +18,9 @@ angular.module('AngularScaffold.Controllers')
         authService.Login(user).then(function(response){
           $sessionStorage.currentUser = response.data;
           $scope.user = {};
-          if ($sessionStorage.currentUser.tipo==="admin") {
+          if ($sessionStorage.currentUser.scope[0]==="admin") {
             $state.go('admin');
-          }else if($sessionStorage.currentUser.tipo==="vendedor"){
+          }else if($sessionStorage.currentUser.scope[0]==="vendedor"){
             $state.go('vendedor');
           }
         }).catch(function(err){

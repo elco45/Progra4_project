@@ -1,7 +1,7 @@
 <table id="tabla_usuario">
 	<tr>
 		<td><strong>Nombre</strong></td>
-		<td><strong>Apellido</strong></td>
+		<td><strong>ID</strong></td>
 		<td><strong>User</strong></td>
 		<td><strong>Contraseña</strong></td>
 		<td><strong>Opcion</strong></td>
@@ -13,13 +13,12 @@
 		<td><input type="password" placeholder="Contraseña" class="cajas" ng-model="user.password"></td>
 		<td>
 			<form>
-				<input type="radio" name="tipo" ng-model="user.tipo" value="vendedor" checked> Vendedor
+				<input type="radio" name="tipo" ng-model="user.scope" value="vendedor" checked> Vendedor
 				<br>
-				<input type="radio" name="tipo" ng-model="user.tipo" value="admin"> Admin
+				<input type="radio" name="tipo" ng-model="user.scope" value="admin"> Admin
 			</form>
 		</td>
 		<td>
-			<input class="btn btn-primary tamano_botones" type="button" value="Buscar"> 
 			<input class="btn btn-danger tamano_botones" type="button" value="Agregar" ng-click="register()"> 
 			<input class="btn btn-warning tamano_botones" type="button" value="Actualizar">
 		</td>
@@ -31,10 +30,15 @@
 		<table id="tabla_usuario_mostrar">
 			<tr>
 				<td><strong>Nombre</strong></td>
-				<td><strong>Apellido</strong></td>
+				<td><strong>ID</strong></td>
 				<td><strong>User</strong></td>
-				<td><strong>Contraseña</strong></td>
-				<td><strong>Opcion</strong></td>
+				<td><strong>Posición</strong></td>
+			</tr>
+			<tr ng-repeat="user in users">
+				<td>{{user.nombre}}</td>
+				<td>{{user.ID}}</td>
+				<td>{{user.username}}</td>
+				<td>{{user.scope}}</td>
 			</tr>
 		</table>
 	</div>

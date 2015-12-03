@@ -6,6 +6,7 @@ angular.module('AngularScaffold.Controllers')
  $scope.search={};
  $scope.template = '';
  $scope.user = {};
+ $scope.users  =[];
  $scope.subarreglo_cantidad =[];
  $scope.nombre_producto = [];
  $scope.cantidad_prodcuto =[];
@@ -17,22 +18,34 @@ angular.module('AngularScaffold.Controllers')
      $scope.subarreglo_cantidad.push([$scope.productos[i]["descripcion"],$scope.productos[i]["cantidad"]]);
      $scope.nombre_producto.push($scope.productos[i]["descripcion"]);
      $scope.cantidad_prodcuto.push($scope.productos[i]["cantidad"]);
-   };
-   $scope.grafica_producto1();
-   $scope.graficaInventario(); 
- }).catch(function(err){
-  alert('Error fetching productos')
-});
+    };
+     $scope.grafica_producto1();
+     $scope.graficaInventario(); 
+  }).catch(function(err){
+    alert('Error fetching productos')
+  });
 }
+
 $scope.getProductos();
+
 $scope.addProductos = function(){
   console.log($scope.producto);
   HomeService.PostProductos($scope.producto).then(function(response){
-   $scope.getProductos();
- }).catch(function(err){
-  alert("Error posting to productos");
-});
+     $scope.getProductos();
+   }).catch(function(err){
+    alert("Error posting to productos");
+  });
 }
+
+$scope.getUsers =function(){
+  HomeService.GetUsers().then(function(response){
+    $scope.users=response.data;
+  }).catch(function(err){
+    alert('Error fetching users')
+  });
+}
+
+$scope.getUsers();
 
 $scope.cambiar_div = function(nombre){
   if (nombre==="vendedor") {
@@ -57,7 +70,7 @@ $scope.register = function(){
     password:  $scope.user.password, 
     ID: $scope.user.ID,
     nombre: $scope.user.nombre,
-    tipo: $scope.user.tipo};
+    scope: [$scope.user.scope]};
     HomeService.Register(user).then(function(response){
       alert('Registered in correctly!');
     }).catch(function(err){

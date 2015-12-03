@@ -8,6 +8,11 @@ exports.getProductos = {
 }
 
 exports.createProducto = {
+  auth: {
+    mode:'required',
+    strategy:'session',
+    scope: ['admin']
+  },
   handler: function(request, reply){
     var newProducto = new producto({
       id: request.payload.id,

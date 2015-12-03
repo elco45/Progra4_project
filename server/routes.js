@@ -7,6 +7,7 @@ var authController = require('./controllers/authController');
 exports.endpoints = [{method: 'GET', path: '/{param*}', config: homeController.home},
 					{method: 'GET', path: '/v1/productos', config: adminController.getProductos},
 					{method: 'POST', path: '/v1/productos', config: adminController.postProductos},
+					{method: 'GET', path: '/v1/users', config: adminController.getUsers},
 					{method: 'POST', path: '/v1/linea_fact', config: vendedorController.GetProductoById},
 					{method: 'PUT', path: '/v1/fact', config:vendedorController.PutProductos},
 					{method: 'POST', path: '/v1/register', config: usersController.createUser},

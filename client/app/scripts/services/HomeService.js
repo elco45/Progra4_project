@@ -14,10 +14,12 @@ angular.module('AngularScaffold.Services').factory('HomeService', ['$http',
 			PostProductos: function(payload){
 				console.log(payload);
 				return $http.post("v1/productos",payload);
-
 			},
 			Register: function(payload){
 	          return $http.post("v1/register", payload);
-	        }
+	        },
+	        GetUsers:function(){
+				return $http.get("v1/users");
+			}
 	    };
 }]);
