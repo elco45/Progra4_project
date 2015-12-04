@@ -9,14 +9,21 @@ angular.module('AngularScaffold.Controllers')
  $scope.subarreglo_cantidad =[];
  $scope.nombre_producto = [];
  $scope.cantidad_prodcuto =[];
+ $scope.arreglo_productos_riesgo = [];
  $scope.getProductos = function(){
   HomeService.GetProductos().then(function(response){
     $scope.productos = response.data;
     $scope.subarreglo_cantidad=[];
+    $scope.nombre_producto = [];
+    $scope.cantidad_prodcuto =[];
     for (var i = 0; i<$scope.productos.length; i++) {
      $scope.subarreglo_cantidad.push([$scope.productos[i]["descripcion"],$scope.productos[i]["cantidad"]]);
      $scope.nombre_producto.push($scope.productos[i]["descripcion"]);
      $scope.cantidad_prodcuto.push($scope.productos[i]["cantidad"]);
+    /* if ($scope.calcular_fecha('10/09/2014')<=20) {
+         alert("Producto en productos_riesgo");
+     };*/
+    
    };
    $scope.grafica_producto1();
    $scope.graficaInventario(); 
@@ -97,7 +104,7 @@ $scope.register = function(){
       series: [{
         name: "Brands",
         colorByPoint: true,
-        data:  $scope.subarreglo_cantidad
+        data: [["Dennis",100],["Jossy",98]]
       }]
     });
   };
@@ -159,6 +166,20 @@ $scope.register = function(){
         data: $scope.cantidad_prodcuto
       }]
     });
+
 };
 $scope.graficaInventario(); 
+$scope.calcular_fecha = function(fecha){
+       var f1='1/12/2015';
+       var fecha_actual = new  Date();
+       var f2=fecha_actual.getDate()+"/"+(fecha_actual.getMonth()+1)+"/"+fecha_actual.getFullYear();
+       var aFecha1 = f1.split('/'); 
+       var aFecha2 = f2.split('/'); 
+       var fFecha1 = Date.UTC(aFecha1[2],aFecha1[1]-1,aFecha1[0]); 
+       var fFecha2 = Date.UTC(aFecha2[2],aFecha2[1]-1,aFecha2[0]); 
+       var dif = fFecha2 - fFecha1;
+       var dias = Math.floor(dif / (1000 * 60 * 60 * 24)); 
+       alert("Dias trascurridos es: "+dias);
+       return dias;
+}
 }]);

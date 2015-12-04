@@ -1,7 +1,6 @@
 body{
 	margin: 0px;
 	padding: 0px;
-
 }
 #header{
 	margin: auto;
@@ -10,6 +9,7 @@ body{
 }
 ul, ol{
 	list-style: none;
+
 }
 .nav li a{
 	background: black;
@@ -17,10 +17,14 @@ ul, ol{
 	text-decoration: none;
 	padding: 10px 20px;
 	display: block;
+	opacity: 0.80;
+	border-radius: 2px;
 
 }
 .nav >li{
 	float: left;
+	background-color: green;
+
 }
 .nav li a:hover{
 	background-color: #434343;
@@ -30,6 +34,7 @@ ul, ol{
 	display:none;
 	position: absolute;
 	min-width: 100px; 
+	background-color: blue;
 	
 }
 .nav li:hover > ul{
@@ -42,4 +47,12 @@ ul, ol{
 .nav li ul li ul{
 	right: -100px;
 	top: 0px;
+}
+.nav1 li a{
+	background: green;
+	color: black;
+	text-decoration: none;
+	padding: 10px 20px;
+	display: block;
+
 }

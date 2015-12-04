@@ -1,6 +1,7 @@
 <div class="row">
+	<br>
 	<div class="col-lg-12">
-		<ul id="myTab" class="nav nav-tabs nav-justified">
+		<ul id="myTab" class="nav1 nav-tabs nav-justified tranparente">
 			<li class="active"><a data-target="#agregarProduct" data-toggle="tab">Agregar Producto</a>
 			</li>
 			<li class=""><a class="btn" data-target="#modificarProduct" ng-click="getFetch()" data-toggle="tab">Modificar Producto</a>
@@ -44,9 +45,12 @@
 							<input type="number" class="texto col-md-6" ng-model="producto.cantidad">
 							<label class="col-md-3"></label>
 						</div>
+						<div>
+							<button class="btn btn-primary" ng-click="addProductos()">AGREGAR</button>
+						</div>
 					</div>
 					<div class="col-md-6 tabla_crear">
-						<table id="taba_venta" class="taba_v">
+						<table id="taba_venta" class="taba_v color_negro tranparente table table-hover ">
 							<tr>
 								<td><strong>Id</strong></td>
 								<td><strong>Descripción</strong></td>
@@ -67,15 +71,13 @@
 						</table>
 					</div>
 				</div>
-				<div>
-					<button class="btn btn-primary" ng-click="addProductos()">AGREGAR</button>
-				</div>
+				
 			</div>
 
 			<div class="tab-pane fade" id="modificarProduct">
 				<br>
 				<div class="row">
-					<table id="taba_venta1" class="taba_v">
+					<table id="taba_venta1" class="taba_v table ">
 						<tr>
 							<td><strong>Id</strong></td>
 							<td><strong>Descripcion</strong></td>
@@ -98,7 +100,7 @@
 				</div>
 				<hr>
 				<div class="row">
-					<table  class="tr1">
+					<table  class="tr1 color_blanco tranparente ">
 						<tr >
 							<td><strong>Id</strong></td>
 							<td><strong>Descripción</strong></td>

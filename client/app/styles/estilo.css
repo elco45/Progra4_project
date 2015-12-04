@@ -253,3 +253,23 @@ form:after {
 	background-position: 0 -135px;
 	color: #00aeef;
 }
+
+body{
+	background: url(http://www.fondosni.com/images/2012-07-08/Textura%20de%20madera-911413.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.tranparente{
+	opacity: 0.80;
+
+}
+.color_blanco{
+	background-color: white;
+	color: white;
+}
+.color_negro{
+	background-color: white;
+	color: black;
+}
