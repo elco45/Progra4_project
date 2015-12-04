@@ -46,7 +46,6 @@ exports.postProductos = {
       	cantidad: request.payload.cantidad
 
     });
-
     newProducto.save();
     console.log('producto saved');
     return reply('ok');
