@@ -2,13 +2,13 @@
   "name": "angular-scaffold",
   "version": "1.0.0",
   "description": "Angular scaffold with hapi.js serving it",
-  "main": "server/server.js",
+  "main": "/server.js",
   "scripts": {
     "start": "node server"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/ZSnake/angular-scaffold.git"
+    "url": "git+ssh://git@github.com/elco45/Progra4_project"
   },
   "keywords": [
     "angular",
@@ -17,12 +17,12 @@
     "bootstrap",
     "scaffold"
   ],
-  "author": "Viktor Zavala",
+  "author": "Dennis Cheong",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ZSnake/angular-scaffold/issues"
+    "url": "https://github.com/elco45/Progra4_project/issues"
   },
-  "homepage": "https://github.com/ZSnake/angular-scaffold#readme",
+  "homepage": "https://github.com/elco45/Progra4_project",
   "dependencies": {
     "boom": "^3.0.0",
     "crypto-js": "^3.1.5",
