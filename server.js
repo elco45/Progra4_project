@@ -14,7 +14,7 @@ server.connection({
               }
 });
 
-mongoose.connect('mongodb://admin:admin@ds027295.mongolab.com:27295/lista_productos');
+mongoose.connect('mongodb://admin:admin@ds027295.mongolab.com:35844/lista_productos');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
