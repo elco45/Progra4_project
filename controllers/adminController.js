@@ -92,20 +92,11 @@ exports.delProductos={
     strategy:'session',
     scope:['admin']
   },
-  handler: function(request, reply){
-    console.log(request.payload)
-    producto.find({id:request.payload.id }, function(err, productos) {
-      console.log(productos)
-      if (err) throw err;
-
-        var queryRemove = producto.findByIdAndRemove(productos._id, function(err) {
-        if (err) throw err;
-
-        // we have deleted the user
-        console.log('User deleted!');
-      });
-      // delete him
-     
+   handler: function(request, reply){
+    producto.findOneAndRemove({ id:request.params.id }, function(err) {
+      if (err) {
+        throw err;
+      }
     });
   }
 }
@@ -117,7 +108,7 @@ exports.delUsers={
     scope:['admin']
   },
   handler: function(request, reply){
-    user.findOneAndRemove({ username:request.payload.username }, function(err) {
+    user.findOneAndRemove({ username:request.params.username }, function(err) {
       if (err) {
         throw err;
       }
