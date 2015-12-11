@@ -1,6 +1,7 @@
 var producto = require('../schemas/producto');/*objetos q se van a volver tablas, ayuda a crud el bd*/
 var user = require('../schemas/user')
 
+
 exports.getProductos = {
   auth: {
     mode:'required',
@@ -114,4 +115,6 @@ exports.delUsers={
       }
     });
   }
+
 }
+
