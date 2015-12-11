@@ -16,7 +16,7 @@ exports.PutProductos ={
   auth: {
     mode:'required',
     strategy:'session',
-    scope: ['vendedor']
+    scope: ['vendedor','admin']
   },
   handler: function(request, reply){
     producto.findOneAndUpdate({id:request.payload.id},{cantidad:request.payload.cantidadmax-request.payload.cantidad},function(err,productos){
