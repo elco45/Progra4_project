@@ -16,6 +16,6 @@ exports.endpoints = [{method: 'GET', path: '/', config: {handler: function(reque
 					{method: 'GET', path: '/v1/logout', config: authController.logout},
 					{method: 'PUT', path: '/v1/modprod', config: adminController.putProductos},
 					{method: 'DELETE', path: '/v1/delprod/{id}', config: adminController.delProductos},
-					{method: 'DELETE', path: '/v1/deluser/{username}', config: adminController.delUsers}
+					{method: 'DELETE', path: '/v1/deluser/{username}', config: adminController.delUsers},
 					{method: 'POST', path: '/v1/ingreso', config: vendedorController.addIngreso}];
 
