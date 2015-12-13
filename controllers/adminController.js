@@ -1,5 +1,6 @@
 var producto = require('../schemas/producto');/*objetos q se van a volver tablas, ayuda a crud el bd*/
 var user = require('../schemas/user')
+var ingresosTabla = require('../schemas/ingreso')
 
 exports.getProductos = {
   auth: {
@@ -113,5 +114,19 @@ exports.delUsers={
         throw err;
       }
     });
+  }
+
+}
+
+exports.getIngreso = {
+  auth: {
+    mode:'required',
+    strategy:'session',
+    scope: ['admin']
+  },
+  handler: function(request, reply){
+    console.log("hollllllllllllllllllll");
+       var ingresos = ingresosTabla.find({});
+       reply(ingresos);
   }
 }
