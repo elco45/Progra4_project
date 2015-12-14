@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var ProductoSchema = new mongoose.Schema({
-	id : String,
+	id : {type:String,unique: true,required: true},
   	descripcion : String,
  	fecha_ingreso: String,
  	fecha_venc: String,
