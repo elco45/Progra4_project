@@ -125,8 +125,7 @@ exports.getIngreso = {
     scope: ['admin']
   },
   handler: function(request, reply){
-    console.log("hollllllllllllllllllll");
-       var ingresos = ingresosTabla.find({});
-       reply(ingresos);
+    var ingresos = ingresosTabla.find({});
+    reply(ingresos);
   }
 }
