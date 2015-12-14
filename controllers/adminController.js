@@ -1,4 +1,4 @@
-var producto = require('../schemas/producto');/*objetos q se van a volver tablas, ayuda a crud el bd*/
+var producto = require('../schemas/producto');
 var user = require('../schemas/user')
 var ingresosTabla = require('../schemas/ingreso')
 
@@ -49,7 +49,6 @@ exports.postProductos = {
       cantidad: request.payload.cantidad
     });
     newProducto.save();
-    console.log('producto saved');
     return reply('ok');
   }
 }
@@ -97,7 +96,8 @@ exports.delProductos={
     producto.findOneAndRemove({ id:request.params.id }, function(err) {
       if (err) {
         throw err;
-      }
+      } 
+      return reply('ok')
     });
   }
 }
@@ -114,8 +114,8 @@ exports.delUsers={
         throw err;
       }
     });
+    return reply('ok');
   }
-
 }
 
 exports.getIngreso = {

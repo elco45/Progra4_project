@@ -1,4 +1,4 @@
-var producto = require('../schemas/producto');/*objetos q se van a volver tablas, ayuda a crud el bd*/
+var producto = require('../schemas/producto');
 var ingreso =require('../schemas/ingreso');
 exports.GetProductoById = {
   auth: {
@@ -26,10 +26,8 @@ exports.PutProductos ={
         }
       });
     });
-
   }
 }
-
 
 exports.addIngreso={
    auth: {
@@ -45,9 +43,7 @@ exports.addIngreso={
       total: request.payload
     });
     newingreso.save();
-    console.log('ingreso saved');
     return reply('ok');
-
   }
 }
 
