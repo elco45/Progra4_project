@@ -1,4 +1,4 @@
-var producto = require('../schemas/producto');/*objetos q se van a volver tablas, ayuda a crud el bd*/
+var producto = require('../schemas/producto');
 
 exports.getProductos = {
   handler: function(request, reply){
@@ -23,7 +23,6 @@ exports.createProducto = {
       cantidad: request.payload.cantidad
     });
     newProducto.save();
-    console.log('producto saved');
     return reply('ok');
   }
 }
